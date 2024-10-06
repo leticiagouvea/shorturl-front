@@ -76,6 +76,16 @@ export function LinkInput() {
           <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">
             {shortenedUrl}
           </a>
+
+          <QRCodeWrapper>
+            <p>Ou acesse pelo QR Code:</p>
+            <img
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+                shortenedUrl
+              )}`}
+              alt="QR Code"
+            />
+          </QRCodeWrapper>
         </ResultArea>
       )}
     </InputArea>
@@ -143,6 +153,19 @@ const ResultArea = styled.div`
   a {
     color: ${colors.mediumBlue};
     font-weight: bold;
+  }
+`;
+
+const QRCodeWrapper = styled.div`
+  margin-top: 30px;
+
+  img {
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
   }
 `;
 
