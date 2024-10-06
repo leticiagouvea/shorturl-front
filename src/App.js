@@ -1,9 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalStyle from "./assets/styles/GlobalStyle";
+import { Home } from "./pages/Home";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Encurtador de Links</h1>
-      </header>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

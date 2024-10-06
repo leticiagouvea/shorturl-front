@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+import { colors } from "./constants";
+
+const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -80,3 +84,34 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+input::placeholder,
+textarea::placeholder {
+  color: #333333;
+  font-size: 16px;
+}
+
+input:focus,
+  textarea:focus {
+    outline: inherit;
+  }
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+&::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+&::-webkit-scrollbar-thumb {
+    background: ${colors.lightBlue};
+    border-radius: 6px;
+}
+&::-webkit-scrollbar-thumb:hover {
+    background: ${colors.mediumBlue};
+}
+`;
+
+export default GlobalStyle;
