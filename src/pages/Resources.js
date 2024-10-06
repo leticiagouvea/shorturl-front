@@ -62,7 +62,7 @@ export function Resources() {
 }
 
 const ResourcesArea = styled.div`
-  margin: 180px 0px 0px 0px;
+  margin: 180px 0px 80px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;

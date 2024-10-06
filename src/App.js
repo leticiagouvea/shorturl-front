@@ -3,6 +3,7 @@ import GlobalStyle from "./assets/styles/GlobalStyle";
 import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
 import { Resources } from "./pages/Resources";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

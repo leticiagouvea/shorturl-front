@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { colors } from "../assets/styles/constants";
 import { IoClose } from "react-icons/io5";
+import CuttingUrl from "../assets/images/CuttingUrl.png";
 
 export function LearnMoreWindow({ onClose }) {
   const handleOverlayClick = (e) => {
@@ -16,6 +17,7 @@ export function LearnMoreWindow({ onClose }) {
         <CloseButton onClick={onClose}>
           <IoClose size={24} />
         </CloseButton>
+        <img src={CuttingUrl} alt="Cutting Url" />
         <h2>Saiba mais sobre o ShortUrl</h2>
         <p>
           O ShortUrl é uma ferramenta simples e eficiente para encurtar seus
@@ -50,15 +52,16 @@ const PopUp = styled.div`
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
   position: relative;
 
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
   h2 {
     color: ${colors.darkBlue};
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: 700;
-
-    h1 {
-      margin-left: 10px;
-    }
   }
 
   p {
