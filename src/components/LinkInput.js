@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { Hourglass } from "react-loader-spinner";
 import { colors } from "../assets/styles/constants";
 import { FcIdea } from "react-icons/fc";
+import { SlActionRedo } from "react-icons/sl";
 
 export function LinkInput() {
   const [originalUrl, setOriginalUrl] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ export function LinkInput() {
     }
 
     setLoading(true);
+    setCopied(false);
 
     try {
       const response = await fetch(
@@ -42,6 +45,19 @@ export function LinkInput() {
     }
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shortenedUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleReset = () => {
+    setOriginalUrl("");
+    setShortenedUrl("");
+    setError("");
+    setCopied(false);
+  };
+
   return (
     <InputArea>
       <form onSubmit={handleSubmit}>
@@ -58,35 +74,43 @@ export function LinkInput() {
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       {loading && (
-        <LoaderWrapper>
-          <Hourglass
-            height="60"
-            width="60"
-            color={colors.lightBlue}
-            ariaLabel="hourglass-loading"
-          />
-        </LoaderWrapper>
+        <Hourglass
+          height="60"
+          width="60"
+          color={colors.lightBlue}
+          ariaLabel="hourglass-loading"
+        />
       )}
 
       {shortenedUrl && !loading && (
-        <ResultArea>
-          <p>
-            <FcIdea /> URL curta:
-          </p>
-          <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">
-            {shortenedUrl}
-          </a>
+        <>
+          <ResultArea>
+            <p>
+              <FcIdea /> URL curta:
+            </p>
+            <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">
+              {shortenedUrl}
+            </a>
+            <CopyButton onClick={handleCopy}>
+              {copied ? "Copiado!" : "Copiar link"}
+            </CopyButton>
 
-          <QRCodeWrapper>
-            <p>Ou acesse pelo QR Code:</p>
-            <img
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
-                shortenedUrl
-              )}`}
-              alt="QR Code"
-            />
-          </QRCodeWrapper>
-        </ResultArea>
+            <QRCodeWrapper>
+              <p>Ou acesse o QR Code:</p>
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+                  shortenedUrl
+                )}`}
+                alt="QR Code"
+              />
+            </QRCodeWrapper>
+          </ResultArea>
+
+          <NewUrlButton onClick={handleReset}>
+            <SlActionRedo />
+            <p>Gerar nova URL</p>
+          </NewUrlButton>
+        </>
       )}
     </InputArea>
   );
@@ -133,16 +157,16 @@ const InputArea = styled.div`
   }
 `;
 
-const LoaderWrapper = styled.div`
-  margin-top: 20px;
-`;
-
 const ResultArea = styled.div`
   width: 85%;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   border: 1px dashed #cccccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   p {
     font-size: 18px;
@@ -169,8 +193,30 @@ const QRCodeWrapper = styled.div`
   }
 `;
 
+const CopyButton = styled.button`
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid ${colors.darkBlue};
+  color: ${colors.darkBlue};
+  font-size: 15px;
+`;
+
+const NewUrlButton = styled.button`
+  margin-top: 30px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: ${colors.darkBlue};
+  color: white;
+  font-size: 15px;
+
+  p {
+    margin-left: 10px;
+  }
+`;
+
 const ErrorMessage = styled.p`
   color: red;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
 `;
