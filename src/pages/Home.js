@@ -1,4 +1,3 @@
-import { Header } from "../components/Header";
 import { LinkInput } from "../components/LinkInput";
 import { FaRegFaceSmileWink } from "react-icons/fa6";
 import Illustration from "../assets/images/Illustration.png";
@@ -8,9 +7,12 @@ import { colors } from "../assets/styles/constants";
 export function Home() {
   return (
     <>
-      <Header />
       <HomeInfos>
-        <img src={Illustration} alt="Link Icon" className="animate__animated animate__swing" />
+        <img
+          src={Illustration}
+          alt="Link Icon"
+          className="animate__animated animate__swing"
+        />
         <div className="title">
           <FaRegFaceSmileWink />
           <h1>Links mais amigáveis para compartilhar!</h1>

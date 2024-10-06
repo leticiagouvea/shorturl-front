@@ -29,7 +29,7 @@ export function Header() {
             <button>Início</button>
           </Link>
           <button onClick={handleLearnMoreClick}>Saiba mais</button>{" "}
-          <Link to="/">
+          <Link to="/resources">
             <button>Recursos</button>
           </Link>
         </Menu>
