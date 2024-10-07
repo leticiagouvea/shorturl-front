@@ -6,8 +6,8 @@ import { colors } from "../assets/styles/constants";
 
 export function Home() {
   return (
-    <>
-      <HomeInfos>
+    <HomePage>
+      <Infos>
         <img
           src={Illustration}
           alt="Link Icon"
@@ -21,13 +21,22 @@ export function Home() {
           Um encurtador de URL simples e rápido! Basta colar a URL para ser
           encurtada:
         </h2>
-      </HomeInfos>
+      </Infos>
       <LinkInput />
-    </>
+    </HomePage>
   );
 }
 
-const HomeInfos = styled.div`
+const HomePage = styled.div`
+  margin: 0 auto;
+  width: 415px;
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+`;
+
+const Infos = styled.div`
   margin: 150px 0px 0px 0px;
   display: flex;
   flex-direction: column;
@@ -47,12 +56,19 @@ const HomeInfos = styled.div`
 
     h1 {
       margin-left: 10px;
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+      }
     }
   }
 
   h2 {
-    max-width: 415px;
     margin-bottom: 20px;
     color: black;
+
+    @media (max-width: 600px) {
+      max-width: 330px;
+    }
   }
 `;

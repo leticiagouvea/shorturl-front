@@ -117,9 +117,8 @@ export function LinkInput() {
 }
 
 const InputArea = styled.div`
-  max-width: 500px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,8 +132,7 @@ const InputArea = styled.div`
 
     input,
     textarea {
-      width: 40%;
-      min-width: 300px;
+      width: 300px;
       height: 50px;
       padding: 20px;
       border: 0px;
@@ -142,6 +140,11 @@ const InputArea = styled.div`
       background-color: ${colors.lightBlue};
       margin-right: 18px;
       font-size: 16px;
+
+      @media (max-width: 510px) {
+        width: 230px;
+        margin-right: 12px;
+      }
     }
 
     button {
@@ -158,7 +161,7 @@ const InputArea = styled.div`
 `;
 
 const ResultArea = styled.div`
-  width: 85%;
+  width: 415px;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -177,6 +180,10 @@ const ResultArea = styled.div`
   a {
     color: ${colors.mediumBlue};
     font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
   }
 `;
 

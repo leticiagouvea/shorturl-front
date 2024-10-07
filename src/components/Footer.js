@@ -20,8 +20,6 @@ export function Footer() {
 const FooterArea = styled.div`
   width: 100%;
   height: 120px;
-  position: relative;
-  bottom: 0;
   background: linear-gradient(180deg, #dddddd 100%, ${colors.darkBlue} 100%);
   color: ${colors.darkBlue};
   font-size: 18px;
@@ -31,17 +29,27 @@ const FooterArea = styled.div`
   align-items: center;
 
   h1,
-  h2,
   .social-icons {
-    width: 180px;
-    display: flex;
-    justify-content: center;
+    width: 160px;
   }
 
   .social-icons {
+    display: flex;
     justify-content: space-evenly;
     font-size: 25px;
     color: ${colors.darkGreen};
     cursor: pointer;
   }
+
+  @media (max-width: 400px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 16px;
+
+      .social-icons {
+        margin-bottom: 20px;
+      }
+    }
 `;

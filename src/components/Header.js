@@ -28,13 +28,13 @@ export function Header() {
           <Link to="/">
             <button>Início</button>
           </Link>
-          <button onClick={handleLearnMoreClick}>Saiba mais</button>{" "}
+          <button onClick={handleLearnMoreClick}>Saiba mais</button>
           <Link to="/resources">
             <button>Recursos</button>
           </Link>
         </Menu>
       </HeaderArea>
-      {showLearnMore && <LearnMoreWindow onClose={handleCloseLearnMore} />}{" "}
+      {showLearnMore && <LearnMoreWindow onClose={handleCloseLearnMore} />}
     </>
   );
 }
@@ -83,7 +83,7 @@ const Menu = styled.div`
   align-items: center;
 
   button {
-    margin: 0px 20px 0px 20px;
+    margin: 0px 20px;
     width: 100px;
     position: relative;
     height: 40px;
@@ -94,7 +94,12 @@ const Menu = styled.div`
     transition: 1s;
     border-radius: 0.3em;
     font-size: 14px;
-    cursor: pointer;
+
+    @media (max-width: 600px) {
+      margin: 0px 12px;
+      width: 90px;
+      font-size: 12px;
+    }
   }
 
   button::after {

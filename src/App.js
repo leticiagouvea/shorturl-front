@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
 import GlobalStyle from "./assets/styles/GlobalStyle";
 import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
@@ -7,18 +8,30 @@ import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <PageContainer>
       <BrowserRouter>
         <GlobalStyle />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resources" element={<Resources />} />
-        </Routes>
+        <ContentWrapper>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resources" element={<Resources />} />
+          </Routes>
+        </ContentWrapper>
         <Footer />
       </BrowserRouter>
-    </div>
+    </PageContainer>
   );
 }
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const ContentWrapper = styled.div`
+  flex: 1;
+`;
 
 export default App;

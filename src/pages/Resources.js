@@ -62,7 +62,7 @@ export function Resources() {
 }
 
 const ResourcesArea = styled.div`
-  margin: 180px 0px 80px 0px;
+  margin: 180px 0px 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +78,7 @@ const ResourcesArea = styled.div`
 `;
 
 const SwiperWrapper = styled.div`
-  width: 100%;
+  width: 95%;
   max-width: 500px;
   margin: 0 auto;
   padding: 0 20px;
@@ -116,11 +116,21 @@ const SlideContent = styled.div`
     margin-bottom: 20px;
     color: ${colors.darkBlue};
     font-weight: 500;
+
+    @media (max-width: 600px) {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
   }
 
   p {
     font-size: 16px;
     width: 80%;
     line-height: 1.5;
+
+    @media (max-width: 600px) {
+      width: 90%;
+      font-size: 15px;
+    }
   }
 `;
