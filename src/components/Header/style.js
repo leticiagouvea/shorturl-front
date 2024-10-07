@@ -1,43 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import LogoIcon from "../assets/images/LogoIcon.png";
-import { colors } from "../assets/styles/constants";
-import { LearnMoreWindow } from "./LearnMoreWindow";
-
-export function Header() {
-  const [showLearnMore, setShowLearnMore] = useState(false);
-
-  const handleLearnMoreClick = () => {
-    setShowLearnMore(true);
-  };
-
-  const handleCloseLearnMore = () => {
-    setShowLearnMore(false);
-  };
-
-  return (
-    <>
-      <HeaderArea>
-        <Title>
-          <img src={LogoIcon} alt="Link Icon" />
-          <span>Short</span>
-          <span className="blue-title">Url</span>
-        </Title>
-        <Menu>
-          <Link to="/">
-            <button>Início</button>
-          </Link>
-          <button onClick={handleLearnMoreClick}>Saiba mais</button>
-          <Link to="/resources">
-            <button>Recursos</button>
-          </Link>
-        </Menu>
-      </HeaderArea>
-      {showLearnMore && <LearnMoreWindow onClose={handleCloseLearnMore} />}
-    </>
-  );
-}
+import { colors } from "../../assets/styles/constants";
 
 const HeaderArea = styled.div`
   width: 100%;
@@ -135,3 +97,5 @@ const Menu = styled.div`
     box-shadow: inset 0px 0px 25px #1479ea;
   }
 `;
+
+export { HeaderArea, Title, Menu };

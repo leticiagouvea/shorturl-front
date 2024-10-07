@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyle from "./assets/styles/GlobalStyle";
-import { Home } from "./pages/Home";
-import { Header } from "./components/Header";
-import { Resources } from "./pages/Resources";
-import { Footer } from "./components/Footer";
+import { Header } from "./components/Header/Header";
+import { Home } from "./pages/HomePage/Home";
+import { Resources } from "./pages/ResourcesPage/Resources";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (

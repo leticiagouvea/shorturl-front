@@ -1,33 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { colors } from "../assets/styles/constants";
-import { IoClose } from "react-icons/io5";
-import CuttingUrl from "../assets/images/CuttingUrl.png";
-
-export function LearnMoreWindow({ onClose }) {
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  return (
-    <Overlay onClick={handleOverlayClick}>
-      <PopUp>
-        <CloseButton onClick={onClose}>
-          <IoClose size={24} />
-        </CloseButton>
-        <img src={CuttingUrl} alt="Cutting Url" />
-        <h2>Saiba mais sobre o ShortUrl</h2>
-        <p>
-          O ShortUrl é uma ferramenta simples e eficiente para encurtar seus
-          links. Torne seus links mais fáceis de compartilhar e gerenciar com
-          apenas alguns cliques!
-        </p>
-      </PopUp>
-    </Overlay>
-  );
-}
+import { colors } from "../../assets/styles/constants";
 
 const Overlay = styled.div`
   position: fixed;
@@ -79,3 +51,5 @@ const CloseButton = styled.button`
   color: ${colors.mediumBlue};
   font-size: 24px;
 `;
+
+export { Overlay, PopUp, CloseButton };
