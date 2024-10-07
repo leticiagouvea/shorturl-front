@@ -17,7 +17,7 @@ export function Resources() {
       image: Icon1,
     },
     {
-      title: "Conteúdo responsivo",
+      title: "Layout responsivo",
       text: "Compatível com desktop, tablets e dispositivos móveis.",
       image: Icon2,
     },

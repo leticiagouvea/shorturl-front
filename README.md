@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# 🔗 ShortUrl - Url Shortener
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**ShortUrl** is a practical and simple web application that allows you to shorten long URLs, making them easier to share and decorate, in just a few clicks. Offers a modern and intuitive interface for an efficient and pleasant user experience.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- Quickly shorten URLs in a simple way.
+- Generate a QR code for each shortened link.
+- Copy the shortened link with a single click.
+- Responsive design and user-friendly interface.
+- Information carousel with the benefits of using ShortUrl.
+- Learn More Section.
 
-### `npm start`
+## 🚀 Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **JavaScript** - Programming language.
+- **React.js** - JavaScript library for building user interfaces.
+- **Styled-Components** - Library for styling components.
+- **HTML5** and **CSS3** - Page structure and styling.
+- **is.gd API** – used for URL shortening services.
+- **React Router** - For navigation between pages.
+- **Swiper.js** - Interactive carousel.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌐 Deploy
 
-### `npm test`
+This project has an active Deployment made with Vercel, and can be tested directly through the link: https://shorturl-zeta.vercel.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📸 Demo and Manual
 
-### `npm run build`
+![ShortUrlDesktop](https://github.com/user-attachments/assets/1705a990-7381-4994-b090-0ec5d262aede)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- To test it, go to the home page.
+- Paste the URL you want to shorten into the input field.
+- Click the "Shorten" button, and the shortened URL will appear in a few moments.
+- To copy the URL automatically, press the "Copy URL" button.
+- You can also access the link by scanning the generated QR Code.
+- For more information about the project, be sure to visit the "Resources" and "Learn More" sections.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 How to Run the Project
 
-### `npm run eject`
+Follow these steps to set up and run the application locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Node.js** (version 14 or higher) and **npm** installed.  
+  [Download Node.js here](https://nodejs.org/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open the terminal and run the following command:
 
-## Learn More
+```bash
+git clone https://github.com/leticiagouvea/shorturl-front.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Install Dependencies
+Navigate to the project folder and install the necessary dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd shorturl
+npm install
+```
 
-### Code Splitting
+### 4. Run the Application
+To start the local server, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+This will open the project in your default browser. The app will be available at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## 📂 Project Structure
+Here's an overview of the main files and directories of the project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+shorturl/
+│
+├── public/
+│   ├── index.html           # Main HTML file
+│
+├── src/
+│   ├── assets/              # Static files (images, icons, etc)
+│   ├── components/          # Reusable components (Header, Footer, etc)
+│   ├── pages/               # Main pages of the project
+│   ├── App.js               # Main React component
+│   ├── index.js             # React entry file
+│
+├── README.md                # Project documentation
+├── package.json             # npm dependencies and scripts
+└── .gitignore               # Files ignored in version control
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Finally, enjoy!
